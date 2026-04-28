@@ -1,0 +1,16 @@
+@use 'base/normalize';
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/globales';
+@use 'base/utilidades';
+@use 'layout/anuncios';
+@use 'base/botones';
+// UI
+@use 'layout/header';
+@use 'layout/navegacion';
+@use 'layout/main';
+@use 'layout/graficoContacto';
+@use 'layout/blog';
+@use 'layout/footer';
+
+@use 'layout/iconos';
