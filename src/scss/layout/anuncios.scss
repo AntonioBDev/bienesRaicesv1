@@ -16,13 +16,13 @@
         padding: 2rem;
     }
 
-    .precio{
-        color: v.$verde;
-        font-weight: v.$bold;
-        font-size: 3rem;
-    }
 }
 
+.precio{
+    color: v.$verde;
+    font-weight: v.$bold;
+    font-size: 3rem;
+}
 .iconos-caracteristicas{
     display: flex;
     list-style: none;
