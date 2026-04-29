@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +24,56 @@
         </div>
     </header>
 
-    <main>
+    <main class="contenedor">
         <h2>blog</h2>
+          <article class="entrada-blog">
+            <div class="imagen-entrada">
+              <picture>
+                <source srcset="build/img/blog1.webp" type="image/webp" />
+                <source srcset="build/img/blog1.jpg" type="image/jpeg" />
+                <img
+                  loading="lazy"
+                  src="build/img/blog1.jpg"
+                  alt="entrada blog"
+                />
+              </picture>
+            </div>
+            <div class="texto-entrada">
+              <a href="entrada.html">
+                <h4 class="no-margin">Terraza en el techo de tu casa</h4>
+                <p>Escrito el: <span>23/04/2026</span> Por: <span>Admin</span></p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                  assumenda temporibus et optio nihil.
+                </p>
+              </a>
+            </div>
+          </article>
+          <article class="entrada-blog">
+          <div class="imagen-entrada">
+            <picture>
+              <source srcset="build/img/blog2.jpg type="image/webp" />
+              <source srcset="build/img/blog2.jpg" type="image/jpeg" />
+              <img
+                loading="lazy"
+                src="build/img/blog2.jpg"
+                alt="entrada blog"
+              />
+            </picture>
+          </div>
+          <div class="texto-entrada">
+            <a href="entrada.html">
+              <h4 class="no-margin">Guia para la decoración de tu casa</h4>
+              <p>Escrito el: <span>23/04/2026</span> Por: <span>Admin</span></p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                assumenda temporibus et optio nihil.
+              </p>
+            </a>
+          </div>
+        </article>
     </main><!--  -->
+
 
     <footer class="footer">
         <div class="contenedor contenido-footer">
