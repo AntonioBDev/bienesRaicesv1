@@ -8,11 +8,11 @@
     column-gap: 2rem;
   }
 }
-.blog{
-    h3{
-        text-transform: capitalize;
-        font-weight: 800;
-    }
+.blog {
+  h3 {
+    text-transform: capitalize;
+    font-weight: 800;
+  }
 }
 
 .entrada-blog {
@@ -20,71 +20,70 @@
   grid-template-columns: 1fr;
   margin-bottom: 2rem;
 
-  @include m.tablet{
+  @include m.tablet {
     grid-template-columns: 1fr 2fr;
     column-gap: 2rem;
   }
-  
-  &:last-of-type{
+
+  &:last-of-type {
     margin-bottom: 0;
   }
 }
 
-
-.texto-entrada{
-    a{
-        color: v.$negro;
+.texto-entrada {
+  a {
+    color: v.$negro;
+  }
+  h4 {
+    margin-top: 2rem;
+    @include m.tablet {
+      margin-top: 0;
     }
-    h4{
-        margin-top: 2rem;
-        @include m.tablet{
-            margin-top: 0;
-        }
-        line-height: 1.4 ;
-        &::after{
-            content: '';
-            display: block;
-            width: 15rem;
-            height: .5rem;
-            background-color: v.$verde;
-        }
+    line-height: 1.4;
+    &::after {
+      content: "";
+      display: block;
+      width: 15rem;
+      height: 0.5rem;
+      background-color: v.$verde;
     }
-    span{
-        color: v.$amarillo;
-    }
+  }
+  span {
+    color: v.$amarillo;
+  }
 }
 
-.testimoniales{
-    h3{
-        font-weight: 800;
-    }
+.testimoniales {
+  h3 {
+    font-weight: 800;
+  }
 }
 
-.testimonial{
-    background-color: v.$verde;
-    padding: 2rem;
+.testimonial {
+  background-color: v.$verde;
+  padding: 2rem;
+  color: v.$blanco;
+  font-size: 2.4rem;
+  border-radius: 2rem;
+  blockquote {
+    padding-left: 4rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url("../../../build/img/comilla.svg");
+      background-repeat: no-repeat;
+      width: 6rem;
+      height: 8rem;
+      position: absolute;
+      left: -2rem;
+    }
+  }
+
+  p {
     color: v.$blanco;
-    font-size: 2.4rem;
-    border-radius: 2rem;
-    blockquote{
-        padding-left: 4rem;
-        position: relative;
-
-        &::before{
-            content: '';
-            display: block;
-            background-image: url('../../../build/img/comilla.svg');
-            background-repeat: no-repeat;
-            width: 6rem;
-            height: 8rem;
-            position: absolute;
-            left: -2rem;
-        }
-    }
-
-    p{
-         color: v.$blanco;
-         text-align: right;
-    }
-
+    text-align: right;
+  }
 }
+

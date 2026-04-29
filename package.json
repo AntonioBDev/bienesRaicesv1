@@ -24,6 +24,10 @@
     "gulp-terser-js": "^5.2.2",
     "gulp-webp": "^4.0.1",
     "sass": "^1.49.9",
-    "terser": "^4.8.0"
+    "terser": "^5.46.2"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.4",
+    "tailwindcss": "^4.2.4"
   }
 }
