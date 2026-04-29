@@ -9,5 +9,10 @@
 }
 
 .btn-verde{
-    @include m.boton(v.$verde, v.$blanco, inlineblock)
+    @include m.boton(v.$verde, v.$blanco, inlineblock);
+}
+
+.btn-verde-block{
+    @include m.boton(v.$verde, v.$blanco,block);
+    border: none;
 }
