@@ -2,6 +2,13 @@
 @use '../base/mixins' as m; 
 @use '../base/variables' as v;
 
+.pagina-seccion-anuncios h1,
+.seccion-anuncios h2{
+    font-weight: 800;
+    text-transform: capitalize;
+
+}
+
 @include m.tablet{
     .contenendor-anuncios{
         @include m.grid(3, 2rem)
@@ -47,7 +54,7 @@
 }
 
 .ver-todas{
-    margin-top: 2rem;
+    margin: 2rem 0 2rem 0;
     display: flex;
     justify-content: end;
 }
