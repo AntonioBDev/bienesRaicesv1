@@ -1,35 +1,55 @@
-@use 'base/mixins' as m;
-@use 'base/variables' as v;
-.barra{
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    @include m.tablet{
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+@use "base/mixins" as m;
+@use "base/variables" as v;
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  @include m.tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.navegacion{
-    a{
-        text-transform: capitalize;
-        text-decoration: none;
-        color: v.$blanco;
-        font-size: 2.2rem;
-        display: block;
-        text-align: center;
+.navegacion {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease-in-out, opacity 0.5s linear;
+  a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: v.$blanco;
+    font-size: 2.2rem;
+    display: block;
+    text-align: center;
 
-        @include m.tablet{
-            font-size: 1.8rem;
-            margin-right: 1rem;
-            &:last-of-type{
-                margin-right: 0;
-            }
-        }
+    @include m.tablet {
+      font-size: 1.8rem;
+      margin-right: 1rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
+  }
 
-    @include m.tablet{
-        display: flex;
-    }
+  @include m.tablet {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.movil-menu {
+  img {
+    width: 5rem;
+  }
+  @include m.tablet {
+    display: none;
+  }
+}
+
+.mostrar {
+  visibility: visible;
+    opacity: 1;
 }
