@@ -1,40 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="build/css/app.css" />
-  </head>
-  <body>
-    <script>
-        if (localStorage.getItem('estadoDarkMode') === 'true') {
-            document.body.classList.add('dark-mode-body');
-        }
-    </script>
-    <header class="header">
-      <div class="contenedor contenido-header">
-        <div class="barra">
-          <a href="/">
-            <img src="build/img/logo.svg" alt="logo" />
-          </a>
-           <div class="movil-menu">
-            <img src="build/img/barras.svg" alt="">
-          </div>
-
-          <div class="derecha">
-            <img loading="lazy" src="build/img/dark-mode.svg" alt="" class="dark-mode">
-            <nav class="navegacion">
-              <a href="nosotros.html" class="enlace">nosotros</a>
-              <a href="anuncios.html" class="enlace">anuncios</a>
-              <a href="blog.html" class="enlace">blog</a>
-              <a href="contacto.html" class="enlace">contacto</a>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-
+<?php 
+  include 'include/templates/header.php';
+?>
     <main class="contenedor pagina-seccion-nosotros">
       <h1>conoce sobre nosotros</h1>
       <section class="contenido-nosotros">
@@ -108,17 +74,6 @@
       <!-- campos -->
     </section>
 
-    <footer class="footer">
-      <div class="contenedor contenido-footer">
-        <nav class="navegacion">
-          <a href="nosotros.html" class="enlace">nosotros</a>
-          <a href="anuncios.html" class="enlace">anuncios</a>
-          <a href="blog" class="enlace">blog</a>
-          <a href="contacto" class="enlace">contacto</a>
-        </nav>
-        <p class="copyringth">Todo los derechos servados &copy</p>
-      </div>
-    </footer>
-    <script src="build/js/bundle.min.js"></script>
-  </body>
-</html>
+<?php
+include 'include/templates/footer.php';
+?>
