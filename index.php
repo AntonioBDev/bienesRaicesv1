@@ -1,6 +1,8 @@
 <?php
-$inicio = true;
-include 'include/templates/header.php';
+declare(strict_types=1);
+require 'include/funciones.php';
+
+incluirTemplate('header', $inicio = true);
 ?>
 
 <main class="seccion-iconos contenedor">
@@ -249,5 +251,5 @@ include 'include/templates/header.php';
 </div>
 
 <?php
-include 'include/templates/footer.php';
+incluirTemplate('footer');
 ?>

@@ -1,5 +1,8 @@
 <?php 
-  include 'include/templates/header.php';
+declare(strict_types=1);
+
+  require 'include/funciones.php';
+incluirTemplate('header');
 ?>
 
     <main class="pagina-seccion-anuncios contenedor">
@@ -151,5 +154,5 @@
     <!--  -->
 
   <?php
-include 'include/templates/footer.php';
+incluirTemplate('footer');
 ?>
