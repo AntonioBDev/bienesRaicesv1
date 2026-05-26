@@ -1,25 +1,41 @@
 <?php
+    declare(strict_types=1);
+    require '../../include/funciones.php';
+    include '../../include/config/database.php';
+    $db = conectarDB();
 
-declare(strict_types=1);
-require '../../include/funciones.php';
-incluirTemplate('header');
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+       $titulo = $_POST['titulo'];
+       $precio = $_POST['precio'];
+       $descripcion = $_POST['descripcion'];
+       $habitaciones = $_POST['habitaciones'];
+       $wc = $_POST['wc'];
+       $estacionamientos = $_POST['estacionamientos'];
+       $vendedores_id = $_POST['vendedores_id'];
+
+       //Insertar en la base de datos 
+       $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamientos, vendedores_id) VALUE ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos', '$vendedores_id')";
+    
+       echo $query;
+    }
+    incluirTemplate('header');
 ?>
 
 <main class="contenedor">
     <h2>Crear</h2>
     <a href="/admin" class="btn-verde">Regresar</a>
 
-    <form action="" class="formulario">
+    <form action="/admin/propiedades/crear.php" class="formulario" method="POST">
         <fieldset>
             <legend>información General</legend>
             <div class="campo">
                 <label for="titulo">Titulo</label>
-                <input type="text" placeholder="Titulo de la propiedad" id="titulo">
+                <input type="text" placeholder="Titulo de la propiedad" id="titulo" name="titulo">
             </div><!--Campo  -->
 
             <div class="campo">
                 <label for="precio">Precio</label>
-                <input type="number" placeholder="Precio de la propiedad" id="precio">
+                <input type="number" placeholder="Precio de la propiedad" id="precio" name="precio">
             </div><!--Campo  -->
 
             <div class="campo">
@@ -29,7 +45,7 @@ incluirTemplate('header');
 
             <div class="campo">
                 <label for="descripcion">Descripción</label>
-                <textarea type="text" id="descripcion"></textarea>
+                <textarea type="text" id="descripcion" name="descripcion"></textarea>
             </div><!--Campo  -->
         </fieldset><!--fieldset - información general -->
 
@@ -37,24 +53,24 @@ incluirTemplate('header');
             <legend>informació Propiedad</legend>
             <div class="campo">
                 <label for="habitaciones">Habitaciones</label>
-                <input type="number" placeholder="Ej: 3" min="1" max="9"  id="habitacion">
+                <input type="number" placeholder="Ej: 3" min="1" max="9"  id="habitaciones" name="habitaciones">
             </div><!--Campo  -->
 
             <div class="campo">
                 <label for="wc">Baños</label>
-                <input type="number" placeholder="Ej: 3" min="1" max="9"  id="wc">
+                <input type="number" placeholder="Ej: 3" min="1" max="9"  id="wc" name="wc">
             </div><!--Campo  -->
 
             <div class="campo">
-                <label for="estacionamiento">Estacionamiento</label>
-                <input type="number" placeholder="Ej: 3" min="1" max="9"  id="estacionamiento">
+                <label for="estacionamientos">Estacionamiento</label>
+                <input type="number" placeholder="Ej: 3" min="1" max="9"  id="estacionamientos" name="estacionamientos">
             </div><!--Campo  -->
         </fieldset><!--fieldset - información de la propiedad -->
 
           <fieldset>
             <legend>Vendedor</legend>
             <div class="campo">
-                <select>
+                <select name="vendedores_id">
                     <option value="1">juan</option>
                     <option value="2">lorena</option>
                 </select>
