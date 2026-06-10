@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $wc = $_POST['wc'] ?? '';
     $estacionamientos = $_POST['estacionamientos'] ?? '';
     $vendedores_id = $_POST['vendedores_id'] ?? '';
+    $creado = date("Y/m/d");
 
 
     //Validar campos 
@@ -62,9 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Validar que este vacio el arreglo de errores 
     if (empty($errores)) {
         //Insertar en la base de datos 
-        $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamientos, vendedores_id) VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos', '$vendedores_id');";
+        $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamientos,creado, vendedores_id) VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos','$creado', '$vendedores_id');";
 
-        echo $query;
+        $resultado = mysqli_query($db, $query);
+
+        if($resultado){
+            header('Location: /admin?resultado=1');
+        }
     }
 }
 incluirTemplate('header');
