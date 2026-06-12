@@ -30,7 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estacionamientos = $_POST['estacionamientos'] ?? '';
     $vendedores_id = $_POST['vendedores_id'] ?? '';
     $creado = date("Y/m/d");
-
+    
+    echo '<pre>';
+    var_dump($_POST);
+    echo '</pre>';
+    exit;
 
     //Validar campos 
     if (!$titulo) {
@@ -79,7 +83,7 @@ incluirTemplate('header');
     <h2>Crear</h2>
     <a href="/admin" class="btn-verde">Regresar</a>
 
-    <form action="/admin/propiedades/crear.php" class="formulario" method="POST">
+    <form action="/admin/propiedades/crear.php" class="formulario" method="POST"  enctype="multipart/form-data">
         <fieldset>
             <legend>información General</legend>
             <div class="campo">
@@ -100,7 +104,7 @@ incluirTemplate('header');
 
             <div class="campo">
                 <label for="imagen">Imagen</label>
-                <input type="file" id="imagen" accept="image/jpeg, image/png">
+                <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
             </div><!--Campo  -->
 
             <div class="campo">
