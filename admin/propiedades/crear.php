@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Crear nombre unico
-        $nombreArchivo = 
+        $nombreArchivo = ;
 
         //subir imagen
         move_uploaded_file($imagen['tmp_name'], $carpetaImagenes .'/'.'.jpg');
