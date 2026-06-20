@@ -83,15 +83,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Crear nombre unico
-        $nombreArchivo = ;
+        $nombreArchivo = md5( uniqid( strval(rand()), true)).'.jpg';
 
         //subir imagen
-        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes .'/'.'.jpg');
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes .'/'. $nombreArchivo);
 
-        exit;
 
         //Insertar en la base de datos 
-        $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamientos,creado, vendedores_id) VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos','$creado', '$vendedores_id');";
+        $query = "INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, wc, estacionamientos,creado, vendedores_id) VALUES ('$titulo', '$precio', '$nombreArchivo', '$descripcion', '$habitaciones', '$wc', '$estacionamientos','$creado', '$vendedores_id');";
 
         $resultado = mysqli_query($db, $query);
 
