@@ -87,7 +87,7 @@ incluirTemplate('header', $inicio = true);
           </li>
         </ul>
 
-        <a href="anuncios.html" class="btn btn-amarillo"> ver propiedad </a>
+        <a href="anuncios.html" class="btn btn-amarillo-block"> ver propiedad </a>
       </div>
     </div>
     <!-- Anuncio -->
@@ -130,7 +130,7 @@ incluirTemplate('header', $inicio = true);
           </li>
         </ul>
 
-        <a href="anuncios.html" class="btn btn-amarillo"> ver propiedad </a>
+        <a href="anuncios.html" class="btn btn-amarillo-block"> ver propiedad </a>
       </div>
     </div>
     <!-- Anuncio -->
@@ -173,7 +173,7 @@ incluirTemplate('header', $inicio = true);
           </li>
         </ul>
 
-        <a href="anuncios.html" class="btn btn-amarillo"> ver propiedad </a>
+        <a href="anuncios.html" class="btn btn-amarillo-block"> ver propiedad </a>
       </div>
     </div>
     <!-- Anuncio -->
