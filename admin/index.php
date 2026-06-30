@@ -44,7 +44,7 @@ incluirTemplate('header');
                 <td><img src="/imagenes/<?php echo $row['imagen']?>" alt="Imagen de la propiedad" class="imagen-propiedad"> </td>
                 <td>$<?php echo $row['precio']?></td>
                 <td>
-                    <a href="#" class="btn-amarillo-block">Actualizar</a>
+                    <a href="/admin/propiedades/actualizar.php?id=<?php echo $row['id']?>" class="btn-amarillo-block">Actualizar</a>
                     <a href="#" class="btn-rojo-block">Eliminar</a>     
                 </td>
             </tr>
@@ -54,5 +54,6 @@ incluirTemplate('header');
 </main><!--  -->
 
 <?php
+mysqli_close($db);
 incluirTemplate('footer');
 ?>
