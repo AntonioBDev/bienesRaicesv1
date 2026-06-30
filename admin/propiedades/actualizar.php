@@ -5,6 +5,8 @@ require '../../include/funciones.php';
 include '../../include/config/database.php';
 $db = conectarDB();
 
+$queryVendedor = 'SELECT * FROM vendedores';
+$result_tablaVendedores = mysqli_query($db, $queryVendedor);
 
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -14,17 +16,18 @@ if (!$id) {
 }
 
 //consultar 
-$query = 'SELECT * FROM propiedades WHERE id == {$id};';
+$query = "SELECT * FROM propiedades WHERE id = {$id};";
 $resultado = mysqli_query($db, $query);
-debug($resultado);
+$resultados_idPropiedades = mysqli_fetch_assoc($resultado);
 //Definir variables del formulario 
-$titulo = '';
-$precio = '';
-$descripcion = '';
-$habitaciones = '';
-$wc = '';
-$estacionamientos = '';
-$vendedores_id = '';
+$titulo = $resultados_idPropiedades['titulo'];
+$precio = $resultados_idPropiedades['precio'];
+$descripcion = $resultados_idPropiedades['descripcion'];
+$habitaciones = $resultados_idPropiedades['habitaciones'];
+$wc = $resultados_idPropiedades['wc'];
+$estacionamientos = $resultados_idPropiedades['estacionamientos'];
+$vendedores_id = $resultados_idPropiedades['vendedores_id'];
+$imagen = $resultados_idPropiedades['imagen'];
 
 //Arreglo de errores por vacio de campo
 $errores = [];
@@ -73,9 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Validar imagen y tamaño 1mb = 1000byts
     $medida = 1000 * 1000;
-    if (!$imagen['name'] || $imagen['error']) {
-        $errores['imagen'] = 'La imagen es obligatorio';
-    }
 
     if ($imagen['size'] > $medida) {
         $errores['imagen'] = 'La imagen supera los 100kb';
@@ -98,7 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         //Insertar en la base de datos 
-        $query = "INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, wc, estacionamientos,creado, vendedores_id) VALUES ('$titulo', '$precio', '$nombreArchivo', '$descripcion', '$habitaciones', '$wc', '$estacionamientos','$creado', '$vendedores_id');";
+        $query = "UPDATE propiedades SET titulo = '{$titulo}',precio = '{$precio}',descripcion =' {$descripcion}',habitaciones = '{$habitaciones}',wc = '{$wc}',estacionamientos = '{$estacionamientos}',vendedores_id = '{$vendedores_id}' WHERE id = {$id};";
+
+        debug($query);
 
         $resultado = mysqli_query($db, $query);
 
@@ -112,10 +114,10 @@ incluirTemplate('header');
 ?>
 
 <main class="contenedor">
-    <h2>titulo pagina</h2>
+    <h2>Actualizar</h2>
     <a href="/admin" class="btn-verde">Regresar</a>
 
-    <form action="/admin/propiedades/crear.php" class="formulario" method="POST" enctype="multipart/form-data">
+    <form class="formulario" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>información General</legend>
             <div class="campo">
@@ -137,6 +139,7 @@ incluirTemplate('header');
             <div class="campo">
                 <label for="imagen">Imagen</label>
                 <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
+                <img src="/imagenes/<?php echo $imagen?>" alt="" class="img-small">
                 <?php if (!empty($errores['imagen'])): ?>
                     <div class="alerta error"><?php echo $errores['imagen'] ?></div>
                 <?php endif ?>
@@ -194,7 +197,7 @@ incluirTemplate('header');
         </fieldset><!--fieldset - información de la propiedad -->
 
         <div class="boton-contacto-block">
-            <input type="submit" class="btn-verde-block" value="Crear">
+            <input type="submit" class="btn-verde-block" value="Actualizar">
         </div>
     </form>
 </main><!--  -->
