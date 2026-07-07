@@ -98,14 +98,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         //Insertar en la base de datos 
-        $query = "UPDATE propiedades SET titulo = '{$titulo}',precio = '{$precio}',descripcion =' {$descripcion}',habitaciones = '{$habitaciones}',wc = '{$wc}',estacionamientos = '{$estacionamientos}',vendedores_id = '{$vendedores_id}' WHERE id = {$id};";
+        $query = "UPDATE propiedades SET titulo = '{$titulo}',precio = '{$precio}', imagen = '{$nombreArchivo}',descripcion =' {$descripcion}',habitaciones = '{$habitaciones}',wc = '{$wc}',estacionamientos = '{$estacionamientos}',vendedores_id = '{$vendedores_id}' WHERE id = {$id};";
 
-        debug($query);
+        
 
-        $resultado = mysqli_query($db, $query);
+        // $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
-            header('Location: /admin?resultado=1');
+            header('Location: /admin?resultado=2');
         }
     }
 }
