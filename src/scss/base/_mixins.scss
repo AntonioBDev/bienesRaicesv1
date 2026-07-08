@@ -35,6 +35,7 @@
     margin-top:math.div(v.$separacion, 2);
     border-radius: 1rem;
     display: $display;
+    border: none;
 
     &:hover{
           background-color: color.adjust($bg,$lightness: -5%);

@@ -19,5 +19,6 @@
 }
 
 .btn-rojo-block{
+    width: 100%;
     @include m.boton(v.$rojo, v.$blanco, block);
 }
