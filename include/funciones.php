@@ -6,7 +6,7 @@ function incluirTemplate(string $nombre, bool $inicio = false)
     include TEMPLATES_URL . "/{$nombre}.php";
 }
 
-function debug($dato)
+function debugear($dato)
 {
     echo '<pre>';
     var_dump($dato);
