@@ -51,7 +51,7 @@ incluirTemplate('header', $inicio = true);
   <h2>casas y departamentos en venta</h2>
   <?php
   $limite = 3;
-  require 'include/templates/anuncios.php'
+  require 'include/templates/anuncios.php';
   ?>
   <!-- contenedor-anuncios -->
   <div class="ver-todas">
